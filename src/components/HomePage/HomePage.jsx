@@ -1,7 +1,6 @@
 // src/components/HomePage/HomePage.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Header from '../common/Header';
 import CustomTable from '../common/Table';
 import { fetchCoinsData } from '../../redux/coins/coinsSlice';
 
@@ -13,11 +12,6 @@ const HomePage = () => {
   const coins = useSelector((state) => state.coins.coins);
   const [coinData, setCoinData] = useState([]); // Store additional data per coin
   const [coinLogos, setCoinLogos] = useState({});
-
-  useEffect(() => {
-    dispatch(fetchCoinsData());
-    fetchAllData();
-  }, [dispatch, coins]);
 
   const fetchAllData = async () => {
     const dataPromises = coins.map(async (coin) => {
@@ -54,6 +48,11 @@ const HomePage = () => {
 
     setCoinLogos(logosMap);
   };
+
+  useEffect(() => {
+    dispatch(fetchCoinsData());
+    fetchAllData();
+  }, [dispatch, coins]);
 
   const tableHeaders = [
     'Logo',
