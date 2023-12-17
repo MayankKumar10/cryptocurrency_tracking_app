@@ -1,3 +1,7 @@
 [build]
-command = "npm run build"
-publish = "build/"
+  command = "npm run build"
+  publish = "build/"
+  functions = "functions/" # Add this line if you have Netlify Functions
+
+[dev]
+  framework = "# Not required for a React app, but useful for other frameworks"
