@@ -52,7 +52,7 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(fetchCoinsData());
     fetchAllData();
-  }, [dispatch, coins]);
+  }, [dispatch,fetchAllData ,coins]);
 
   const tableHeaders = [
     'Logo',
