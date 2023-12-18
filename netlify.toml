@@ -9,12 +9,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://localhost:5000/:splat"
+  to = "http://your-api-url/:splat"
   status = 200
   force = true
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true

@@ -49,11 +49,18 @@ const HomePage = () => {
     setCoinLogos(logosMap);
   };
 
+function callingFetchAllData(){
+  return fetchAllData()
+}
+
   useEffect(() => {
     dispatch(fetchCoinsData());
-    fetchAllData();
-  }, [dispatch,fetchAllData ,coins]);
+  }, [dispatch ,coins]);
 
+  useEffect(()=>{
+    callingFetchAllData()
+  },[callingFetchAllData])
+  
   const tableHeaders = [
     'Logo',
     'Name',
