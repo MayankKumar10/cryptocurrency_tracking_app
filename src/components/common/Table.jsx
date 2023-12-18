@@ -43,7 +43,6 @@ const StyledAvatar = styled(Avatar)`
 
 
 const CustomTable = ({ headers, data }) => {
-  console.log('custom Table data', data);
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -74,7 +73,6 @@ const CustomTable = ({ headers, data }) => {
     logosFunction('bitcoin');
   }, []);
 
-  console.log('logosData', logoData);
 
   const getLogoUrl = (symbol) => {
   

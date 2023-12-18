@@ -4,7 +4,6 @@ import { convertCurrency, fetchCoins } from '../../services/cryptoServices';
 
  const fetchCoinsData = createAsyncThunk('coins/fetchCoinsData', async () => {
   const response = await fetchCoins();
-  console.log("fetchCoinsData", response.data.data )
   return response.data.data;
 });
 
