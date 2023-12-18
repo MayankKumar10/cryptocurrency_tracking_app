@@ -17,10 +17,10 @@ const App = () => {
     palette: {
       mode: themeMode,
       primary: {
-        main: '#3f51b5', // Customize the primary color
+        main: '#3f51b5',       
       },
       secondary: {
-        main: '#f50057', // Customize the secondary color
+        main: '#f50057',       
       },
     },
   });
