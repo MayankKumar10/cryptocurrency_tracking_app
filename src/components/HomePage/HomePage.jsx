@@ -49,18 +49,24 @@ const HomePage = () => {
     setCoinLogos(logosMap);
   };
 
-function callingFetchAllData(){
-  return fetchAllData()
-}
+
 
   useEffect(() => {
     dispatch(fetchCoinsData());
-  }, [dispatch ,coins]);
 
-  useEffect(()=>{
-    callingFetchAllData()
-  },[callingFetchAllData])
-  
+    const callingFetchAllData = async() =>{
+      return fetchAllData()
+    }
+
+    callingFetchAllData(); 
+    const intervalId = setInterval(callingFetchAllData, 60000); // call every 60 seconds
+
+
+    return () => clearInterval(intervalId);
+
+  }, [dispatch ,coins, fetchAllData]);
+
+
   const tableHeaders = [
     'Logo',
     'Name',
