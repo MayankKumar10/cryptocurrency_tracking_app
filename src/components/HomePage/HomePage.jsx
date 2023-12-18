@@ -64,7 +64,7 @@ const HomePage = () => {
 
     return () => clearInterval(intervalId);
 
-  }, [dispatch ,coins, fetchAllData]);
+  }, [dispatch ,coins]);
 
 
   const tableHeaders = [

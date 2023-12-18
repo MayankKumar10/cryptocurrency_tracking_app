@@ -71,26 +71,21 @@ const CustomTable = ({ headers, data }) => {
       }
     };
 
-    // Example usage
     logosFunction('bitcoin');
   }, []);
 
   console.log('logosData', logoData);
 
   const getLogoUrl = (symbol) => {
-    // Replace this with your logic for dynamically importing images
-    // You might need to adjust the path based on your project structure
   
     const logos = require.context('../../assets/icons', false, /\.png$/);
     const logoKeys = logos.keys();
   
-    // Filter logoKeys based on symbol match
     const matchingLogoKeys = logoKeys.filter((key) => {
       const keySymbol = key.match(/\/([a-z0-9]+)\.png$/)[1];
       return keySymbol.toLowerCase() === symbol.toLowerCase();
     });
   
-    // Take the first matching logo key
     const logoPath = matchingLogoKeys.length > 0 ? matchingLogoKeys[0] : null;
     return logoPath ? logos(logoPath) : null;
   };

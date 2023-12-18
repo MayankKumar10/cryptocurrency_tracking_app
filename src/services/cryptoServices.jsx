@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const proxyURL = 'http://localhost:5000/api';
 
-const API_KEY = '1a7b5dc0-566d-461f-8d53-914190919176'; // Replace with your CoinMarketCap API key
+const API_KEY = '1a7b5dc0-566d-461f-8d53-914190919176'; 
 
 const instance = axios.create({
   baseURL: proxyURL,
@@ -24,7 +24,7 @@ export const convertCurrency = (from, to, amount) =>
   export const fetchCoinInfo = async (id) => {
     try {
       const response = await instance1.get(`/cryptocurrency/info?id=${id}`);
-      console.log('Coin Info Response', response.data); // Log the response
+      console.log('Coin Info Response', response.data); 
       return response.data;
     } catch (error) {
       console.error('Error fetching coin info', error);
@@ -35,7 +35,7 @@ export const convertCurrency = (from, to, amount) =>
   export const fetchLogo = async (slug) => {
     try {
       const response = await instance1.get(`/cryptocurrency/info?slug=${slug}`);
-      console.log('Logo Response', response.data); // Log the response
+      console.log('Logo Response', response.data); 
       return response.data;
     } catch (error) {
       console.error('Error fetching logo', error);
