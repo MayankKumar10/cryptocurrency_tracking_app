@@ -10,22 +10,8 @@ const HomePage = () => {
   const [coinData, setCoinData] = useState([]); // Store additional data per coin
   const [coinLogos, setCoinLogos] = useState({});
 
-  const fetchAllData = async () => {
-    // Your existing code for fetching data here...
-  };
-
-
   useEffect(() => {
     dispatch(fetchCoinsData());
-
-    const callingFetchAllData = async () => {
-      return fetchAllData();
-    };
-
-    callingFetchAllData();
-    const intervalId = setInterval(callingFetchAllData, 3000); // call every 60 seconds
-
-    return () => clearInterval(intervalId);
 
   }, [dispatch, coins]);
 
